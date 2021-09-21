@@ -1,4 +1,5 @@
 // Tree Data Structures - a non linear data structures
+// This is just an introduction to tree
 
 #include <stdio.h>
 #include <stdlib.h>

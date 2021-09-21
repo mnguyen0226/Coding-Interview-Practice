@@ -1,0 +1,15 @@
+# Data Structures Organization:
+- Linked List.
+- Doubly Linked List.
+- Circular Linked List.
+- Stacks.
+- Queue.
+- Trees.
+- Binary Trees.
+- Binary Search Trees.
+- Red-Black Trees.
+- AVL Trees.
+- Splay Trees.
+- Heap.
+- Priority Queues.
+- Graphs
