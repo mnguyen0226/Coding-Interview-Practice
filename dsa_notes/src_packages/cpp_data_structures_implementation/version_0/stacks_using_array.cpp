@@ -16,9 +16,7 @@
 int S[SIZE + 1];
 int top = 0;
 
-/**
- * Function check if the stack is empty or not
- */
+/* Function checks if the stack is empty or not */
 int is_empty()
 {
     if (top == 0)
@@ -28,9 +26,7 @@ int is_empty()
     return 0;
 }
 
-/**
- * Function that push an element to the stack
- */
+/* Function pushs an element to the stack */
 void push(int x)
 {
     top = top + 1;
@@ -44,9 +40,7 @@ void push(int x)
     }
 }
 
-/**
- * Function that pop an element out of the stack
- */
+/* Function that pop an element out of the stack */
 int pop()
 {
     if (is_empty())
@@ -62,9 +56,7 @@ int pop()
     }
 }
 
-/**
- * Print all elements in the stack 
- */
+/* Print all elements in the stack */
 void print_stack(int S[])
 {
     for (int i = 0; i < SIZE; i++)

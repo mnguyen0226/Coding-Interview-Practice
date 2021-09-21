@@ -10,23 +10,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define a node
+/* Define a node */
 typedef struct node
 {
     int data;
     struct node *next;
 } node;
 
-// Define a queue
+/* Define a linked list object */
 typedef struct linked_list
 {
     struct node *head;
     struct node *tail;
 } queue;
 
-/**
- * Function makes a new node dynamically
- */
+/* Function makes a new node dynamically */
 node *create_node(int data)
 {
     node *n = (node *)malloc(sizeof(node));
@@ -36,9 +34,7 @@ node *create_node(int data)
     return n;
 }
 
-/**
- * Function makes a new queue dynamically
- */
+/* Function makes a new queue dynamically */
 queue *create_queue()
 {
     queue *q = (queue *)malloc(sizeof(queue));
@@ -48,9 +44,7 @@ queue *create_queue()
     return q;
 }
 
-/**
- * Function traverse and print out all the element in the queue
- */
+/* Function traverse and print out all the element in the queue */
 void traversal(queue *q)
 {
     node *temp = q->head;
@@ -63,9 +57,7 @@ void traversal(queue *q)
     printf("\n");
 }
 
-/**
- * Function check if the queue is empty or node
- */
+/* Function check if the queue is empty or node */
 int is_empty(queue *q)
 {
     if (q->head == NULL)
@@ -75,9 +67,7 @@ int is_empty(queue *q)
     return 0;
 }
 
-/**
- * Function add a node to a queue
- */
+/* Function add a node to a queue */
 void enqueue(queue *q, node *n)
 {
     if (is_empty(q))
@@ -92,9 +82,7 @@ void enqueue(queue *q, node *n)
     }
 }
 
-/**
- * Function remove an element at the end of the queue and return that element
- */
+/* Function remove an element at the end of the queue and return that element */
 int dequeue(queue *q)
 {
     if (is_empty(q))

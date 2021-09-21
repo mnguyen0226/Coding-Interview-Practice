@@ -10,27 +10,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * Initialize a node
- */
+/* Initialize a node */
 typedef struct node
-{ // typedef in struct gives a type a new name
+{ 
     int data;
     struct node *next;
 } node;
 
-/**
- * Initialize a linked list
- */
+/* Initialize a linked list */
 typedef struct linked_list
 {
     struct node *head;
     struct node *top;
-} stack; // This for naming the struct
+} stack;
 
-/**
- * Function creates a new node dynamically
- */
+/* Function creates a new node dynamically */
 node *create_node(int data)
 {
     node *n = (node *)malloc(sizeof(node));
@@ -39,10 +33,8 @@ node *create_node(int data)
     return n;
 }
 
-/**
- * Function creates a new linked list dynamically
- * Unlike regular linked list, the stack can be create as empty without any initial node storing data
- */
+/* Function creates a new linked list dynamically
+ * Unlike regular linked list, the stack can be create as empty without any initial node storing data */
 stack *create_stack()
 {
     stack *S = (stack *)malloc(sizeof(stack));
@@ -51,9 +43,7 @@ stack *create_stack()
     return S;
 }
 
-/**
- * Function checks if the stack is empty or not. Using top to keep track of this
- */
+/* Function checks if the stack is empty or not. Using top to keep track of this */
 int is_empty(stack *S)
 {
     if (S->top == NULL)
@@ -63,9 +53,7 @@ int is_empty(stack *S)
     return 0;
 }
 
-/**
- * Function traverses the stack and print out all elements. Using head to keep track of ithis 
- */
+/* Function traverses the stack and print out all elements. Using head to keep track of this */
 void traverse(stack *S)
 {
     node *temp = S->head;
@@ -77,9 +65,7 @@ void traverse(stack *S)
     printf("\n");
 }
 
-/**
- * Function that push a new node to the end of the stack
- */
+/* Function that push a new node to the end of the stack */
 void push(stack *S, node *n)
 {
     // if the stack is empty, then set the head and the top to that node
@@ -96,10 +82,8 @@ void push(stack *S, node *n)
     }
 }
 
-/**
- * Function that pop a new node to the end of the stack
- * return a data of the top node
- */
+/* Function that pop a new node to the end of the stack
+ * return a data of the top node */
 int pop(stack *S)
 {
     // If the stack is empty

@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Define a queue object */
 typedef struct queue
 {
     int head;
@@ -18,9 +19,7 @@ typedef struct queue
     int Q[]; // This is public so the whole files talks about the same queue
 } queue;
 
-/**
- * Function create queue with certain size dynamically
- */
+/* Function creates queue with certain size dynamically */
 queue *create_queue(int size)
 {
     queue *q = (queue *)malloc(sizeof(queue) + size * (sizeof(int)));
@@ -33,9 +32,7 @@ queue *create_queue(int size)
     return q;
 }
 
-/**
- * Function checks if the queue is empty or not
- */
+/* Function checks if the queue is empty or not */
 int is_empty(queue *q)
 {
     if (q->tail == q->head)
@@ -45,9 +42,7 @@ int is_empty(queue *q)
     return 0;
 }
 
-/**
- * Function checks if the queue is full or not
- */
+/* Function checks if the queue is full or not */
 int is_full(queue *q)
 {
     if (q->head == q->tail + 1)
@@ -57,9 +52,7 @@ int is_full(queue *q)
     return 0;
 }
 
-/**
- * Enqueue = add the data to the end of the queue
- */
+/* Enqueue adds the data to the end of the queue */
 void enqueue(queue *q, int x)
 {
     if (is_full(q))
@@ -82,9 +75,7 @@ void enqueue(queue *q, int x)
     }
 }
 
-/**
- * Dequeue = remove the data in the front of the queue and return that data
- */
+/* Dequeue removes the data in the front of the queue and return that data */
 int dequeue(queue *q)
 {
     if (is_empty(q))
@@ -109,10 +100,8 @@ int dequeue(queue *q)
     }
 }
 
-/**
- * Function traverse through the array and print out everything
- * Print from head to tail
- */
+/* Function traverse through the array and print out everything
+ * Print from head to tail */
 void display(queue *q)
 {
     for (int i = q->head; i < q->tail; i++)
